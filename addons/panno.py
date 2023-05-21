@@ -3,8 +3,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import simpledialog
 
-from prompt_toolkit import prompt
-from prompt_toolkit.completion import WordCompleter
+
 
 
 
