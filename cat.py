@@ -22,7 +22,7 @@ def start_rename(home_dir):
     entry.focus()
 
 
-def finish_rename(home_dir, entry):``
+def finish_rename(home_dir, entry):
     new_filename = entry.get().strip()
     new_home_dir = os.path.join(os.path.dirname(home_dir), new_filename)
     os.rename(home_dir, new_home_dir)
