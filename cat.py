@@ -1,12 +1,8 @@
 import tkinter as tk
 import subprocess
-import json
-import keyboard
 from tkinter import messagebox
 import sys, os
-import time
-import argparse
-import math
+
 # Get the path of the script or executable file
 script_path = sys.argv[0]
 
@@ -26,7 +22,7 @@ def start_rename(home_dir):
     entry.focus()
 
 
-def finish_rename(home_dir, entry):
+def finish_rename(home_dir, entry):``
     new_filename = entry.get().strip()
     new_home_dir = os.path.join(os.path.dirname(home_dir), new_filename)
     os.rename(home_dir, new_home_dir)
@@ -190,14 +186,10 @@ def load_files():
         elif extension == '.txt':
             label.configure(background='white')
 
-        label.bind("<Button-1>", lambda event, path=home_dir: open_file(path))
-        label.bind("<Button-3>", lambda event, path=home_dir: show_file_context_menu(event))
-        label.grid(row=grid_row, column=grid_column, padx=10, pady=10, sticky='w')
-
         grid_column += 1
         if grid_column == grid_columns:
             grid_column = 0
-            grid_row += 510
+            grid_row += 5
         label.bind("<Button-1>", lambda event, path=home_dir: open_file(home_dir)) # type: ignore
         label.bind("<Button-3>", lambda event, path=home_dir: show_file_context_menu(event))
         label.grid(row=grid_row, column=grid_column, padx=10, pady=10, sticky='w')
