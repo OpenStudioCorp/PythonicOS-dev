@@ -8,7 +8,6 @@ script_path = sys.argv[0]
 
 # Get the directory containing the script or executable file
 home_dir = os.path.dirname(os.path.abspath(script_path))
-import configparser
 
     
 def start_rename(home_dir):
@@ -91,7 +90,7 @@ __license__ = "construct1.0"
 
 def create_file():
     # Get the path of the script or executable file
-    script_path = sys.argv[0]
+    script_path = 'addons'
 
 # Get the directory containing the script or executable file
     home_dir = os.path.dirname(os.path.abspath(script_path))
