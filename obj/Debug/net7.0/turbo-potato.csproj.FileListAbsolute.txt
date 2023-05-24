@@ -1,0 +1,12 @@
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.csproj.AssemblyReference.cache
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.AssemblyInfoInputs.cache
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.AssemblyInfo.cs
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.csproj.CoreCompileInputs.cache
+C:\Users\charlie\Documents\GitHub\turbo-potato\bin\Debug\net7.0\turbo-potato.deps.json
+C:\Users\charlie\Documents\GitHub\turbo-potato\bin\Debug\net7.0\turbo-potato.dll
+C:\Users\charlie\Documents\GitHub\turbo-potato\bin\Debug\net7.0\turbo-potato.pdb
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.dll
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\refint\turbo-potato.dll
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\turbo-potato.pdb
+C:\Users\charlie\Documents\GitHub\turbo-potato\obj\Debug\net7.0\ref\turbo-potato.dll

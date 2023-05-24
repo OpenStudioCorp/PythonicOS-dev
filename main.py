@@ -2,7 +2,125 @@ import os
 import sys
 import time
 import subprocess
+import serial
 
+pydata1 = serial.serial('pydata1')
+pydata2 = serial.serial('pydata2')
+pydata3 = serial.serial('pydata3')
+pydata4 = serial.serial('pydata4')
+pydata5 = serial.serial('pydata5')
+pydata6 = serial.serial('pydata6')
+pydata7 = serial.serial('pydata7')
+pydata8 = serial.serial('pydata8')
+pydata9 = serial.serial('pydata9')
+pydata10 = serial.serial('pydata10')
+pydata11 = serial.serial('pydata11')
+pydata12 = serial.serial('pydata12')
+pydata13 = serial.serial('pydata13')
+pydata14 = serial.serial('pydata14')
+pydata15 = serial.serial('pydata15')
+pydata16 = serial.serial('pydata16')
+pydata17 = serial.serial('pydata17')
+pydata18 = serial.serial('pydata18')
+pydata19 = serial.serial('pydata19')
+pydata20 = serial.serial('pydata20')
+pydata21 = serial.serial('pydata21')
+pydata22 = serial.serial('pydata22')
+pydata23 = serial.serial('pydata23')
+pydata24 = serial.serial('pydata24')
+pydata25 = serial.serial('pydata25')
+pydata26 = serial.serial('pydata26')
+pydata27 = serial.serial('pydata27')
+pydata28 = serial.serial('pydata28')
+pydata29 = serial.serial('pydata29')
+pydata30 = serial.serial('pydata30')
+pydata31 = serial.serial('pydata31')
+pydata32 = serial.serial('pydata32')
+pydata33 = serial.serial('pydata33')
+pydata34 = serial.serial('pydata34')
+pydata35 = serial.serial('pydata35')
+pydata36 = serial.serial('pydata36')
+pydata37 = serial.serial('pydata37')
+pydata38 = serial.serial('pydata38')
+pydata39 = serial.serial('pydata39')
+pydata40 = serial.serial('pydata40')
+pydata41 = serial.serial('pydata41')
+pydata42 = serial.serial('pydata42')
+pydata43 = serial.serial('pydata43')
+pydata44 = serial.serial('pydata44')
+pydata45 = serial.serial('pydata45')
+pydata46 = serial.serial('pydata46')
+pydata47 = serial.serial('pydata47')
+pydata48 = serial.serial('pydata48')
+pydata49 = serial.serial('pydata49')
+pydata50 = serial.serial('pydata50')
+pydata51 = serial.serial('pydata51')
+pydata52 = serial.serial('pydata52')
+pydata53 = serial.serial('pydata53')
+pydata54 = serial.serial('pydata54')
+pydata55 = serial.serial('pydata55')
+pydata56 = serial.serial('pydata56')
+pydata57 = serial.serial('pydata57')
+pydata58 = serial.serial('pydata58')
+pydata59 = serial.serial('pydata59')
+pydata60 = serial.serial('pydata60')
+pydata61 = serial.serial('pydata61')
+pydata62 = serial.serial('pydata62')
+pydata63 = serial.serial('pydata63')
+pydata64 = serial.serial('pydata64')
+pydata65 = serial.serial('pydata65')
+pydata66 = serial.serial('pydata66')
+pydata67 = serial.serial('pydata67')
+pydata68 = serial.serial('pydata68')
+pydata69 = serial.serial('pydata69')
+pydata70 = serial.serial('pydata70')
+pydata71 = serial.serial('pydata71')
+pydata72 = serial.serial('pydata72')
+pydata73 = serial.serial('pydata73')
+pydata74 = serial.serial('pydata74')
+pydata75 = serial.serial('pydata75')
+pydata76 = serial.serial('pydata76')
+pydata77 = serial.serial('pydata77')
+pydata78 = serial.serial('pydata78')
+pydata79 = serial.serial('pydata79')
+pydata80 = serial.serial('pydata80')
+pydata81 = serial.serial('pydata81')
+pydata82 = serial.serial('pydata82')
+pydata83 = serial.serial('pydata83')
+pydata84 = serial.serial('pydata84')
+pydata85 = serial.serial('pydata85')
+pydata86 = serial.serial('pydata86')
+pydata87 = serial.serial('pydata87')
+pydata88 = serial.serial('pydata88')
+pydata89 = serial.serial('pydata89')
+pydata90 = serial.serial('pydata90')
+pydata91 = serial.serial('pydata91')
+pydata92 = serial.serial('pydata92')
+pydata93 = serial.serial('pydata93')
+pydata94 = serial.serial('pydata94')
+pydata95 = serial.serial('pydata95')
+pydata96 = serial.serial('pydata96')
+pydata97 = serial.serial('pydata97')
+pydata98 = serial.serial('pydata98')
+pydata99 = serial.serial('pydata99')
+pydata100 = serial.serial('pydata100')
+wait = serial.serial('pywait')
+time = serial.serial('pytime')
+start = serial.serial('pystart')
+stop = serial.serial('pystop')
+cont = serial.serial('cont')
+halt = serial.serial('pyhalt')
+time = serial.serial('pytime')
+
+
+
+
+
+
+def timeis():
+    secconds = time.time()
+    
+    
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)
@@ -10,7 +128,14 @@ def print_slow(str):
         time.sleep(0.005)
     sys.stdout.write('\n')
 
-
+    
+    
+    
+    
+    
+    
+    
+    
 def startSH():
     print_slow('########  ##    ## ######## ##     ##  #######  ##    ## ####  ######                #######   ######  ')
     print_slow('##     ##  ##  ##     ##    ##     ## ##     ## ###   ##  ##  ##    ##              ##     ## ##    ## ')
@@ -38,6 +163,6 @@ def startSH():
     print_slow('-------------------------------------------------------------------------------------------------------')
     print_slow('-------------------------------------------------------------------------------------------------------')
     print_slow('*******************************************************************************************************')
- 
+
 if __name__ == ('__main__'):
     startSH()
