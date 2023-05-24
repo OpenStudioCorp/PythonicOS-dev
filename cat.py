@@ -2,7 +2,7 @@ import tkinter as tk
 import subprocess
 from tkinter import messagebox
 import sys, os
-
+from addons.panno import TextEditorApp
 # Get the path of the script or executable file
 script_path = sys.argv[0]
 
@@ -49,26 +49,16 @@ def pin_to_taskbar(home_dir):
 # ---------------------------------------------#
 # open file allows you to open files with diffrent editors, panno is the most used for writing python,css,js ect, and pyle is a webbrowser that allows you to navagate the web!
 # ---------------------------------------------#
-def open_file(home_dir):
-    try:
-        if home_dir.endswith('.html'):
-            run_with_panno([home_dir])
-        elif home_dir.endswith('.txt'):
-            run_with_panno([home_dir])
-        if os.path.isfile(home_dir):
-            if home_dir.endswith('.css'):
-                subprocess.Popen(['notepad', home_dir])
-            elif home_dir.endswith('.html'):
-                run_with_panno([home_dir])
-            elif home_dir.endswith('.txt'):
-                run_with_panno([home_dir])
-            else:
-                subprocess.Popen(['python3', 'addons/panno.py', home_dir])
-        else:
-            subprocess.Popen(['notepad', home_dir])
-            messagebox.showerror('Open File', 'The specified path is not a file.')
-    except FileNotFoundError:
-        messagebox.showerror('Open File', 'Default program not found for the file extension.')
+def open_file(file_path):
+    if file_path:
+        subprocess.Popen(['python3', 'addons/panno.py', file_path])
+        print(file_path)
+    else:
+        print("No file path provided.")
+def close_text_editor(app, root):
+    app.current_file = None  # Clear the current file path
+    root.destroy()  # Close the text editor window
+
 
 def unpin_from_taskbar(home_dir):
     for widget in taskbar.winfo_children():
@@ -136,8 +126,6 @@ def show_files_context_menu(event):
         context_menu.add_command(label='Run with Python IDE', command=lambda: run_with_python_ide(home_dir))
         context_menu.add_command(label='Run with panno', command=lambda: run_with_panno(home_dir))
 
-    if home_dir.endswith('.html'):
-        context_menu.add_command(label='Open with Browser', command=lambda: run_with_pyle(home_dir))
 
         if home_dir.endswith('.txt'):
             context_menu.add_command(label='Open with panno', command=lambda: run_with_panno(home_dir))
@@ -156,7 +144,8 @@ home_dir = os.path.dirname(os.path.abspath(script_path))
 def load_files():
     for widget in desktop.winfo_children():
         widget.destroy()
-
+    script_path = 'files'
+    
     files_path = os.path.dirname(os.path.abspath(script_path))
     if not os.path.exists(files_path):
         os.makedirs(files_path)
@@ -190,11 +179,17 @@ def load_files():
         if grid_column == grid_columns:
             grid_column = 0
             grid_row += 5
-        label.bind("<Button-1>", lambda event, path=home_dir: open_file(home_dir)) # type: ignore
+
+        def open_file_with_path(path):
+            def wrapper(event):
+                open_file(path)
+            return wrapper
+
+        label.bind("<Button-1>", open_file_with_path(home_dir))
         label.bind("<Button-3>", lambda event, path=home_dir: show_file_context_menu(event))
         label.grid(row=grid_row, column=grid_column, padx=10, pady=10, sticky='w')
         if file_context_menu is not None:
-           file_context_menu.destroy()
+            file_context_menu.destroy()
 # import configparser and the config.ini file
 # config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.ini')
 
@@ -261,8 +256,8 @@ load_files()
 # load basic info about the monitor and menus
 # ------------------------------------------#
 # load the scripts that are used in the file such as pyle and panno!
-script_path0 = os.path.join(script_dir, 'addons', 'panno.py')
-script_path1 = os.path.join(script_dir, 'addons', 'pyle.py')
+script_path0 = os.path.join(script_dir,  'addons/panno.py')
+
 
 
 # ------------------------------------------#
@@ -299,14 +294,6 @@ def run_with_python_ide(home_dir):
         subprocess.Popen(['idle', '-r', 'home_dir'])
     except FileNotFoundError:
         messagebox.showerror('Run with Python IDE', 'IDLE is somehow broken,.')
-
-
-def run_with_pyle(home_dir):
-    try:
-        subprocess.Popen(['python', script_path1], cwd=script_dir)
-    except FileNotFoundError:
-        messagebox.showerror('Run with pyle', 'pyle is not installed into the /assets folder!.')
-
 
 def run_with_panno(home_dir):
     try:
@@ -368,4 +355,7 @@ load_files()
 root.mainloop()
 
 if __name__ == "__main__":
+    root = tk.Tk()
+    app = TextEditorApp(root)
+    root.mainloop()
     main()

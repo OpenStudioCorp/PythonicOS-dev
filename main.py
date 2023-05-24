@@ -1,23 +1,48 @@
-import tkinter as tk
-from tkinter import filedialog
 import os
-def browse_folder():
-    folder_path = filedialog.askdirectory()
-    if folder_path:
-        listbox.delete(0, tk.END)  # Clear the listbox
-        files = os.listdir(folder_path)
-        for file_name in files:
-            listbox.insert(tk.END, file_name)
+import sys
+import time
+def print_slow(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.005)
+    sys.stdout.write('\n')
 
-root = tk.Tk()
-root.title("File Explorer")
 
-# Create a listbox to display the files
-listbox = tk.Listbox(root, width=50)
-listbox.pack(padx=10, pady=10)
+def startSH():
+    print_slow('########  ##    ## ######## ##     ##  #######  ##    ## ####  ######                #######   ######  ')     
+    print_slow('##     ##  ##  ##     ##    ##     ## ##     ## ###   ##  ##  ##    ##              ##     ## ##    ## ') 
+    print_slow('##     ##   ####      ##    ##     ## ##     ## ####  ##  ##  ##       -#-#-#-#-#-  ##     ## ##       ') 
+    print_slow('########     ##       ##    ######### ##     ## ## ## ##  ##  ##       #-#-#-#-#-#  ##     ##  ######  ') 
+    print_slow('##           ##       ##    ##     ## ##     ## ##  ####  ##  ##       -#-#-#-#-#-  ##     ##       ## ') 
+    print_slow('##           ##       ##    ##     ## ##     ## ##   ###  ##  ##    ##              ##     ## ##    ## ') 
+    print_slow('##           ##       ##    ##     ##  #######  ##    ## ####  ######                #######   ######  ') 
+    print_slow('*******************************************************************************************************')
+    print_slow('-------------------------------------------PythonicOS--------------------------------------------------')
+    print_slow('-------------------------------------------version 1.0-------------------------------------------------')
+    print_slow('-----------------------copywrite 2023 OpenStudio and the amazing github suporters----------------------')
+    print_slow('------------------welcome to the interactive start wizard for Windows, MacOS and Linux.----------------')
+    print_slow('-------------------------------------------------------------------------------------------------------')
+    print_slow('-------------------this wizard will allow you to navagate PythonicOS and its features!-----------------')
+    print_slow('---------------using the helpfull commands listed below you can nvagate around the shell!--------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------')
+    print_slow('-------------------------------------------------------------------------------------------------------')
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-----------------------------------CD <directory>: changes directory-----------------------------------') 
+    print_slow('-------------------MKDIR followed by <directoryname> on a new line: makes a directory------------------') 
+    print_slow('------------------------------------------Help: displays Help------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('-------------------------------------------------------------------------------------------------------') 
+    print_slow('*******************************************************************************************************') 
 
-# Create a button to browse the folder
-browse_button = tk.Button(root, text="Browse", command=browse_folder)
-browse_button.pack(pady=10)
 
-root.mainloop()
+    
+    
+    
+if __name__ == ('__main__'):
+    startSH()

@@ -17,6 +17,7 @@ class TextEditorApp:
         self.redo_stack = []
         self.bind_keyboard_shortcuts()
         self.current_file = None  # Variable to store the current file name
+        self.file_dialog_open = False  # Flag to track if file dialog is open
 
         # Create the menu bar
         menu_bar = tk.Menu(root)
@@ -46,8 +47,10 @@ class TextEditorApp:
         self.root.bind("<Control-z>", self.undo)
         self.root.bind("<Control-y>", self.redo)
 
-    def load_file(self, event=None):
-        file_path = filedialog.askopenfilename()
+    def load_file(self, file_path=None):
+        if not file_path:
+            file_path = filedialog.askopenfilename()
+
         if file_path:
             try:
                 with open(file_path, "r") as file:
