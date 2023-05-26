@@ -39,7 +39,7 @@ class TextEditorApp:
 
         redo_button = tk.Button(toolbar, text="Redo", command=self.redo)
         redo_button.pack(side=tk.LEFT)
-
+    load_file()
         
 
     def bind_keyboard_shortcuts(self):

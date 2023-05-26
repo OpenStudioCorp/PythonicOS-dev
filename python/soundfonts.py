@@ -6,3 +6,5 @@ def warning():
     playsound('warning.mp3')
 def stop():
     playsound('stop.mp3')
+def fearofdark1():
+    playsound('mp3/fearofdark1.mp3')

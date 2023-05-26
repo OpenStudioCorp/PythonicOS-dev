@@ -78,7 +78,7 @@ def is_pinned(home_dir):
         return False
 
 config = 'config.ini'
-# !/usr/bin/env python3
+# !/usr/bin/env python
 """
 Module Docstring
 """
