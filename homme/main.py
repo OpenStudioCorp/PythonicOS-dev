@@ -4,7 +4,7 @@ import time
 import subprocess
 import socket
 
-from python.st import pydata1,pydata2,pydata3,pydata4,pydata5,pydata6,pydata7,pydata8,pydata9,pydata10
+from python.st import wait1,wait2,pydata1,pydata2,pydata3,pydata4,pydata5,pydata6,pydata7,pydata8,pydata9,pydata10
 import platform
 # def main():
 #     if platform.system == 'windows':
@@ -18,8 +18,8 @@ import platform
         
 
 message = 'Hello, script!'
-pydata1.send(message.encode())
-data = pydata2.recv(1024)
+wait1.send(message.encode())
+data = wait2.recv(1024)
 print('Received:', data.decode())
 
 def startcmd():
