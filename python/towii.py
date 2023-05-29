@@ -1,4 +1,26 @@
 import socket
+# welcome to that one wifi
+# this is the wifi driveer for PythonicOS
+# it is more of a wifi esc type of driver
+# the whole just of this file is to allow people to make sockets to connect to the main desktop
+# eather too ask it whats on the desktop, or the location of the home directory, if the user has clicked on a file ECT.
+# if you want to make your own sockets for the desktop or have a literal standard for data transfer
+# import socket thenn call socket.socketpair() with the names of the socket like pydata1, pydata2 = socket.socketpair()
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 
 pydata1   , pydata2 = socket.socketpair()
 pydata3   , pydata4 = socket.socketpair()

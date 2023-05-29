@@ -2,34 +2,15 @@ import os
 import sys
 import time
 import subprocess
-import socket
-
-from thatonewifi import pydata1,pydata2,pydata3,pydata4,pydata5,pydata6,pydata7,pydata8,pydata9,pydata10
 import platform
-# def main():
-#     if platform.system == 'windows':
-#       os.system('cmd /c "python pip install -r requirements.txt"')
-#       os.system('cmd /c "python VirtualSerialPorts -l 100"')
-    
-#     if platform.system == 'linux':
-#         os.system('bash "python3 pip install -r requirements.txt"')
-#         os.system('bash"python3 VirtualSerialPorts -l 100"')
-#         startSH()
-        
-
-message = 'Hello, script!'
-pydata1.send(message.encode())
-data = pydata2.recv(1024)
-print('Received:', data.decode())
+from towii import pydata1, pydata2,time1
 
 def startcmd():
-    subprocess.run(["python", "shell.py"])
-    
-
+        subprocess.call('shell.exe',)
 
 def timeis():
     secconds = time.time()
-    
+    time1.sendall(secconds)
     
 def print_slow(str):
     for letter in str:
@@ -39,6 +20,9 @@ def print_slow(str):
     sys.stdout.write('\n')
 
 def startSH():
+     pydata1.sendall(b"Hello! just letting you know that PythonicOS is starting!")
+     data = pydata2.recv(1024)
+     print("Received:", data.decode())
      print_slow('########  ##    ## ######## ##     ##  #######  ##    ## ####  ######                #######   ######  ')
      print_slow('##     ##  ##  ##     ##    ##     ## ##     ## ###   ##  ##  ##    ##              ##     ## ##    ## ')
      print_slow('##     ##   ####      ##    ##     ## ##     ## ####  ##  ##  ##       -#-#-#-#-#-  ##     ## ##       ')

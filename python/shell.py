@@ -1,5 +1,7 @@
 import os
 import subprocess
+from python.towii import pydata1,pydata2
+
 import tkinter
 from tkinter import messagebox
 from file import home_dir,config_file,addons,usrpass,pythonOS
@@ -15,21 +17,6 @@ def print_help():
     print("help: Display this help message")
     print("exit: Exit MyShell")
 
-def run_with_python_ide(home_dir):
-    try:
-        subprocess.Popen(['idle', '-r', 'home_dir'])
-    except FileNotFoundError:
-        messagebox.showerror('Run with Python IDE', 'IDLE is not installed on your system!.')
-def editPythonicOS():
-    subprocess.run(["nano", "PythonicOS.py"])
-
-def editmain():
-    subprocess.run(["nano", "main.py"])
-    
-def editsf():
-    subprocess.run(["nano", "sf.py"])
-def editpanno():
-    subprocess.run(["nano", "addons/panno.py"])
 
 def mkdir():
     directory_name = input("Enter the name of the directory to be created: ")
@@ -44,16 +31,19 @@ def editfile():
     filename = input("Enter the name of the file to edit: ")
     path = os.path.join(os.getcwd(), filename)
     if 'path' == None:
-        open('filename' 'w')
+        open(filename, 'w')
+
     if not 'path' == None:
         try:
             subprocess.run(["nano", path])
             print("editing file!", filename)
         except OSError as error:
             print("Error editing file '%s': %s" % (filename, error))
-
+def senddata():
+    message = input()
+    pydata1.send(message.encode())
 def StartOS():
-    subprocess.run(["python3", "PythonicOS.py"])
+    subprocess.Popen('PythonicOS.exe')
 
 def my_shell():
     print_greetings()
@@ -71,22 +61,14 @@ while True:
             print("cd: missing operand")
     elif tokens[0] == "help":
         print_help()
+    elif tokens[0] == "sd":
+        senddata()
     elif tokens[0] == "exit":
         break
     elif tokens[0] == "help":    
         print_greetings()
     elif tokens[0] == "edit":    
         editfile()
-    elif tokens[0] == "epanno":
-        editpanno()
-    elif tokens[0] == "eos":
-        editPythonicOS()
-    elif tokens[0] == "emain":
-        editmain()
-    elif tokens[0] == "idle":
-        run_with_python_ide(home_dir):
-    elif tokens[0] == "ls":
-        os.scandir('../home/')
     elif tokens[0] == "start":
         StartOS()
 
@@ -95,3 +77,4 @@ while True:
 
 if __name__ == "__main__":
     my_shell()
+    input("Press Enter to exit...")

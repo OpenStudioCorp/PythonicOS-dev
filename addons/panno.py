@@ -2,10 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import simpledialog
-
-
-
-
+import sys
 
 class TextEditorApp:
     def __init__(self, root):
@@ -39,8 +36,14 @@ class TextEditorApp:
 
         redo_button = tk.Button(toolbar, text="Redo", command=self.redo)
         redo_button.pack(side=tk.LEFT)
-    load_file()
-        
+
+        # Bind the right-click event for the text widget
+        self.text.bind("<Button-3>", self.show_text_context_menu)
+
+        # Check if file path is passed as an argument
+        if len(sys.argv) > 1:
+            file_path = sys.argv[1]
+            self.load_file(file_path)
 
     def bind_keyboard_shortcuts(self):
         self.root.bind("<Control-s>", self.save_file)
@@ -87,7 +90,7 @@ class TextEditorApp:
         if self.undo_stack:
             text = self.undo_stack.pop()
             self.redo_stack.append(self.text.get("1.0", tk.END))
-            self.text.delete("1.0",)
+            self.text.delete("1.0", tk.END)
             self.text.insert(tk.END, text)
 
     def redo(self, event=None):
@@ -97,21 +100,22 @@ class TextEditorApp:
             self.text.delete("1.0", tk.END)
             self.text.insert(tk.END, text)
 
-
-    
-
     def update_title(self):
         if self.current_file:
             self.root.title(f"Text Editor - {self.current_file}")
         else:
             self.root.title("Text Editor")
 
-
-
-
+    def show_text_context_menu(self, event):
+        text_context_menu = tk.Menu(self.root, tearoff=0)
+        text_context_menu.add_command(label="Cut", command=lambda: self.text.event_generate("<<Cut>>"))
+        text_context_menu.add_command(label="Copy", command=lambda: self.text.event_generate("<<Copy>>"))
+        text_context_menu.add_command(label="Paste", command=lambda: self.text.event_generate("<<Paste>>"))
+        text_context_menu.add_separator()
+        text_context_menu.add_command(label="Select All", command=lambda: self.text.tag_add("sel", "1.0", tk.END))
+        text_context_menu.post(event.x_root, event.y_root)
 
 if __name__ == "__main__":
     root = tk.Tk()
     app = TextEditorApp(root)
     root.mainloop()
-
