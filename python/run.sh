@@ -1,2 +1,0 @@
-
-python python\shell.py
