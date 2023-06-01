@@ -2,7 +2,9 @@ import tkinter as tk
 import subprocess
 from tkinter import messagebox
 import sys
+import time
 import os
+subprocess.call('setup.exe')
 
 home_dir = 'python/home'
 
@@ -117,7 +119,7 @@ def load_files(home_dir):
         os.makedirs(home_dir)
 
     files = sorted(os.listdir(home_dir))  # Sort files alphabetically
-    grid_columns = 10
+    grid_columns = 9
     grid_row = 0
     grid_column = 0
 
