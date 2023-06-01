@@ -2,8 +2,9 @@ import tkinter as tk
 import subprocess
 from tkinter import messagebox
 import sys
+import time
 import os
-
+subprocess.call('setup.exe')
 
 home_dir = 'python/home'
 
