@@ -1,6 +1,6 @@
 import os
 import subprocess
-from python.towii import pydata1,pydata2
+from towii import pydata1,pydata2
 
 import tkinter
 from tkinter import messagebox
@@ -44,7 +44,10 @@ def senddata():
     pydata1.send(message.encode())
 def StartOS():
     subprocess.Popen('PythonicOS.exe')
-
+def startsockets():
+    pydata1.connect()
+    pydata2.connect()
+    
 def my_shell():
     print_greetings()
 
@@ -71,7 +74,8 @@ while True:
         editfile()
     elif tokens[0] == "start":
         StartOS()
-
+    elif tokens[0] == "startsockets":
+        startsockets()
     else:
         print(f"{tokens[0]}: command not found")
 
